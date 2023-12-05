@@ -16,9 +16,11 @@ for line in lines:
     for set_ in sets:
         numbers_cubes = [x.split(" ") for x in set_.split(", ")]
         color_dict = {x[1]: int(x[0]) for x in numbers_cubes}
-        is_ok.append((color_dict.get("green",0) <= max_colors["green"]) 
-                and (color_dict.get("blue",0) <= max_colors["blue"]) 
-                and (color_dict.get("red",0) <= max_colors["red"]))
+        is_ok.append(
+            (color_dict.get("green", 0) <= max_colors["green"])
+            and (color_dict.get("blue", 0) <= max_colors["blue"])
+            and (color_dict.get("red", 0) <= max_colors["red"])
+        )
     if all(is_ok):
         sum_value += game_id
 
@@ -35,8 +37,14 @@ for line in lines:
     for set_ in sets:
         numbers_cubes = [x.split(" ") for x in set_.split(", ")]
         for x in numbers_cubes:
-            color_dict.update({x[1]: max(int(x[0]), color_dict.get(x[1],0)) for x in numbers_cubes})
-    power = color_dict.get("green",1) * color_dict.get("red",1) * color_dict.get("blue",1)
+            color_dict.update(
+                {x[1]: max(int(x[0]), color_dict.get(x[1], 0)) for x in numbers_cubes}
+            )
+    power = (
+        color_dict.get("green", 1)
+        * color_dict.get("red", 1)
+        * color_dict.get("blue", 1)
+    )
     sum_value += power
 
 print(sum_value)

@@ -24,8 +24,7 @@ correction_map = {
     "six": "six6six",
     "seven": "seven7seven",
     "eight": "eight8eight",
-    "nine": "nine9nine"
-
+    "nine": "nine9nine",
 }
 number_map = {
     "one": "1",
@@ -36,7 +35,7 @@ number_map = {
     "six": "6",
     "seven": "7",
     "eight": "8",
-    "nine": "9"
+    "nine": "9",
 }
 
 calibration = []
